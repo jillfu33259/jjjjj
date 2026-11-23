@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="mx-auto max-w-7xl px-5 py-16"><p class="eyebrow">辨識風險，不貼標籤</p><h1 class="page-title">黑幕拆解與避坑檢測</h1><p class="lead">單一話術不等於違法證據；多個警訊同時出現時，先停下來查證，並把疑慮交給主管機關。</p>
+<div class="grid gap-5 md:grid-cols-2"><article class="card border-t-4 border-emerald-600"><h2 class="text-xl font-extrabold text-emerald-800">透明、可查證的合法管道</h2><ul class="mt-4 list-disc space-y-2 pl-5"><li>來源、照護紀錄與交付資訊可核對</li><li>可先了解犬隻性格、健康與生活需求</li><li>有疑問時能詢問收容單位或主管機關</li></ul><a class="mt-4 inline-block font-bold text-emerald-800" href="{{ url_for('adopt') }}">查看台灣領養資源 →</a></article>
+<article class="card border-t-4 border-red-600"><h2 class="text-xl font-extrabold text-red-800">需要提高警覺的私下販售</h2><ul class="mt-4 list-disc space-y-2 pl-5"><li>來源或飼養環境無法確認</li><li>健康、晶片、疫苗資料只口頭保證</li><li>限時付款、拒絕合理查核或訪視</li></ul><p class="mt-4 text-sm">若疑似違法，請保留對話與公開資訊並諮詢地方動保主管機關。</p></article></div>
+<section class="mt-12 card"><p class="eyebrow">互動檢測器</p><h2 class="section-title">這些話術出現了幾項？</h2><div class="grid gap-3 sm:grid-cols-2">{% for item in signs %}<label class="flex gap-3 rounded-xl border border-slate-200 p-4"><input data-risk type="checkbox"><span><strong>{{ item.title }}</strong><span class="mt-1 block text-sm text-slate-600">{{ item.detail }} <span class="font-semibold">建議：{{ item.tip }}</span></span></span></label>{% endfor %}</div><p data-risk-result class="mt-5 rounded-xl bg-amber-50 p-4 font-bold" aria-live="polite">勾選你遇到的情況，查看風險提醒。</p><p class="mt-3 text-xs text-slate-500">檢測僅供教育參考，不構成違法判定。</p></section></section>
+{% endblock %}
