@@ -1,14 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="hero"><div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-20 md:grid-cols-[1.2fr_.8fr] md:py-28">
-  <div><p class="eyebrow">給正在考慮養狗的你</p><h1 class="page-title mt-4">可愛背後的真實代價，<br>先看懂再帶牠回家。</h1><p class="lead">在帶牠回宿舍之前，先看懂繁殖場沒說的事。用資訊做選擇，不是要責怪想養狗的你。</p>
-    <div class="flex flex-wrap gap-3"><a class="btn-primary" href="{{ url_for('expose') }}">前往黑幕拆解</a><a class="btn-green" href="{{ url_for('adopt') }}">尋找領養管道</a></div></div>
-  <div class="card rotate-1 bg-white"><p class="text-5xl">🐕</p><p class="mt-4 text-xl font-extrabold">一段關係，不該從看不見的代價開始。</p><p>理解來源、健康與生活承諾，讓喜歡成為更好的選擇。</p></div>
-</div></section>
-<section class="mx-auto max-w-7xl px-5 py-16"><p class="eyebrow">從心動到理解</p><h2 class="section-title">三個停下來想一想的理由</h2><div class="grid gap-5 md:grid-cols-3">
-  <article class="card"><span class="text-sm font-bold text-amber-700">01｜先看見話術</span><h3 class="mt-3">低價、網購、免運面交</h3><p>限時優惠與方便交付，常讓人來不及查來源。看不到犬隻生活環境，就很難知道牠從哪裡來。</p></article>
-  <article class="card"><span class="text-sm font-bold text-red-700">02｜理解繁殖代價</span><h3 class="mt-3">過度繁殖，健康被掩蓋</h3><p>非法繁殖可能伴隨母犬反覆生育、幼犬病況未被揭露與近親繁殖風險。個案仍需主管機關調查認定。</p><a class="mt-4 inline-block font-bold text-red-700" href="{{ url_for('expose') }}">看懂紅旗 →</a></article>
-  <article class="card"><span class="text-sm font-bold text-emerald-700">03｜把生活放進選擇</span><h3 class="mt-3">領養，先認識再一起生活</h3><p>成犬個性和體型較容易觀察，收容單位也能說明健康與照護需求。領養條件依各機構規定，先詢問最準確。</p><a class="mt-4 inline-block font-bold text-emerald-700" href="{{ url_for('adopt') }}">開始準備領養 →</a></article>
-</div></section>
-<section class="mx-auto max-w-7xl px-5 pb-16"><div class="card border-l-4 border-amber-500"><p class="eyebrow">台灣法規快篩</p><h2 class="mt-2 text-xl font-extrabold">先核對許可資訊，再談交付與付款</h2><p class="mt-2">特定寵物業者應依法取得許可並依規定標示許可證字號；「自家生」「只收營養費」等說法不代表當然免除法規義務。疑似違法請保存公開資訊並向所在地動保主管機關或 1959 專線詢問、檢舉，違法認定以主管機關調查為準。</p><a class="mt-3 inline-block font-bold text-amber-800" href="tel:1959">撥打 1959 動保專線</a></div></section>
+<section class="hero hero-home overflow-hidden">
+  <div class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-14 md:grid-cols-[1fr_1fr] md:py-20 lg:gap-14">
+    <div class="relative z-10">
+      <span class="hero-pill"><span class="hero-pill-dot"></span>給正在考慮養狗的你</span>
+      <h1 class="page-title mt-5">可愛背後的真實代價，<br><span class="text-emerald-800">先看懂再帶牠回家。</span></h1>
+      <p class="lead">在帶牠回宿舍之前，先看懂繁殖場沒說的事。用資訊做選擇，不是要責怪想養狗的你。</p>
+      <div class="flex flex-wrap gap-3"><a class="btn-primary" href="{{ url_for('expose') }}">一起拆解黑幕 <span aria-hidden="true">↗</span></a><a class="btn-green" href="{{ url_for('adopt') }}">看看領養選擇</a></div>
+      <div class="hero-note"><span class="hero-note-icon">✳</span><span>多一點理解，少一點衝動；讓喜歡有更好的去處。</span></div>
+    </div>
+    <div class="hero-art-wrap" aria-label="學生在宿舍裡陪伴一隻狗狗的插畫" role="img">
+      <div class="hero-art-orbit"></div>
+      <img class="hero-art" src="{{ url_for('static', filename='illustrations/hero-companion.svg') }}" alt="">
+      <div class="art-note art-note-top"><span>先認識牠</span><b>再決定一起生活</b></div>
+      <div class="art-note art-note-bottom"><span class="art-note-heart">♥</span><span><b>陪伴是一份長期承諾</b><small>從生活條件開始想</small></span></div>
+      <span class="hero-spark hero-spark-one" aria-hidden="true">✦</span><span class="hero-spark hero-spark-two" aria-hidden="true">✳</span>
+    </div>
+  </div>
+  <div class="hero-bottom mx-auto max-w-7xl px-5"><span>先停一秒，給自己三個問題</span><a href="#three-steps">往下看看 <span aria-hidden="true">↓</span></a></div>
+</section>
+
+<section id="three-steps" class="mx-auto max-w-7xl px-5 py-20 md:py-24">
+  <div class="section-heading-row"><div><p class="eyebrow">從心動到理解</p><h2 class="section-title">不是不准喜歡，<br class="sm:hidden">是多看見一點。</h2></div><p class="section-intro">每一個選擇背後都有故事。先了解來源與照護，再找適合彼此的相遇方式。</p></div>
+  <div class="grid gap-5 md:grid-cols-3">
+    <article class="story-card story-card-amber"><div class="story-art story-art-market"><img src="{{ url_for('static', filename='illustrations/quick-buy.svg') }}" alt="手機螢幕上有快速購買訊息的插畫" loading="lazy"></div><div class="story-copy"><span class="story-step">01 <i>先看見話術</i></span><h3>低價、網購、免運面交</h3><p>限時優惠與方便交付，常讓人來不及查來源。看不到犬隻生活環境，就很難知道牠從哪裡來。</p><a href="{{ url_for('expose') }}">辨認常見紅旗 <span aria-hidden="true">→</span></a></div></article>
+    <article class="story-card story-card-rose"><div class="story-art story-art-heart"><img src="{{ url_for('static', filename='illustrations/health-care.svg') }}" alt="獸醫檢查狗狗健康的溫柔插畫" loading="lazy"></div><div class="story-copy"><span class="story-step">02 <i>理解繁殖代價</i></span><h3>過度繁殖，健康可能被掩蓋</h3><p>母犬反覆生育、幼犬病況未揭露、近親繁殖風險，都值得多問一句。個案由主管機關調查認定。</p><a href="{{ url_for('expose') }}">了解如何查證 <span aria-hidden="true">→</span></a></div></article>
+    <article class="story-card story-card-sage"><div class="story-art story-art-adopt"><img src="{{ url_for('static', filename='illustrations/adoption-meet.svg') }}" alt="學生與收容犬初次見面的插畫" loading="lazy"></div><div class="story-copy"><span class="story-step">03 <i>把生活放進選擇</i></span><h3>先認識，再一起生活</h3><p>成犬的個性與體型較容易觀察；收容單位也能介紹照護需求。領養條件依各機構規定，先詢問最準確。</p><a href="{{ url_for('adopt') }}">開始準備領養 <span aria-hidden="true">→</span></a></div></article>
+  </div>
+</section>
+
+<section class="student-section">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-[.9fr_1.1fr] md:py-20">
+    <div class="student-art-frame"><img src="{{ url_for('static', filename='illustrations/student-life.svg') }}" alt="學生整理租屋、預算和狗狗照護計畫的插畫" loading="lazy"><span class="student-art-sticker">生活先準備好<br><b>陪伴才走得長</b></span></div>
+    <div><p class="eyebrow">大學生的真實日常</p><h2 class="section-title">宿舍、租屋、畢業後，<br>都值得先想一遍。</h2><p class="section-intro">養狗不只是一筆認養費。每月開銷、住宿規定、課表和畢業後的搬家計畫，都是陪伴的一部分。先算一算，不代表你不能養，而是讓決定更安心。</p><div class="student-facts"><div><span class="fact-icon fact-icon-home">⌂</span><span><b>住處允許嗎？</b><small>確認宿舍規範或房東同意</small></span></div><div><span class="fact-icon fact-icon-calendar">▦</span><span><b>時間排得開嗎？</b><small>課業、實習與日常照護</small></span></div><div><span class="fact-icon fact-icon-wallet">＋</span><span><b>預備金夠嗎？</b><small>固定開銷和突發醫療都要想</small></span></div></div><a class="btn-primary mt-7" href="{{ url_for('reality') }}">試算我的養狗生活 <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-5 py-20 md:py-24"><div class="law-banner"><div class="law-icon" aria-hidden="true">⚖</div><div class="law-copy"><p class="eyebrow">台灣法規快篩</p><h2>先核對許可資訊，再談交付與付款。</h2><p>特定寵物業者應依法取得許可並依規定標示許可證字號；「自家生」「只收營養費」等說法不代表當然免除法規義務。疑似違法請保存公開資訊並向所在地動保主管機關或 1959 專線詢問、檢舉，違法認定以主管機關調查為準。</p><a href="tel:1959">1959 動保專線 <span aria-hidden="true">↗</span></a></div><div class="law-doodle" aria-hidden="true">1959<br><span>守護牠</span></div></div></section>
+
+<section class="closing-section"><div class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-14 md:grid-cols-[1fr_auto] md:py-16"><div><p class="eyebrow">下一步，從了解開始</p><h2 class="text-3xl font-black tracking-tight md:text-4xl">把喜歡，變成更好的選擇。</h2><p class="mt-3 max-w-2xl text-slate-600">看懂來源、衡量生活，再遇見適合一起生活的牠。</p></div><a class="btn-green closing-button" href="{{ url_for('adopt') }}">前往台灣領養指南 <span aria-hidden="true">→</span></a></div></section>
 {% endblock %}
