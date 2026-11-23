@@ -3,7 +3,8 @@ import json
 import requests
 from flask import Flask, render_template, redirect, url_for
 ROOT = Path(__file__).resolve().parent
-app = Flask(__name__)
+# Vercel serves public assets from its CDN; the same folder powers local Flask too.
+app = Flask(__name__, static_folder=str(ROOT / "public" / "static"), static_url_path="/static")
 def load_data(name):
     with (ROOT / "data" / f"{name}.json").open(encoding="utf-8") as f:
         return json.load(f)

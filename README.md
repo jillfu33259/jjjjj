@@ -27,13 +27,13 @@ git push -u origin main
 ```
 
 ## Vercel 部署
-登入 Vercel，選 Add New → Project，匯入 GitHub repository，Framework Preset 選 Other 後按 Deploy。`vercel.json` 使用 Python Runtime 載入 `api/index.py`，不需資料庫或環境變數。Dog CEO 呼叫 timeout 為 5 秒，API 錯誤時使用備援圖片。
+登入 Vercel，選 Add New → Project，匯入 GitHub repository 後按 Deploy。Vercel 會自動辨識根目錄的 Flask `app.py`；`public/static/` 由 CDN 提供 CSS、JavaScript 與插畫，`vercel.json` 會將 `templates/` 和 `data/` 一併封裝進函式。無需資料庫或環境變數。Dog CEO 呼叫 timeout 為 5 秒，API 錯誤時使用備援圖片。
 
 ## 專案結構
 ```text
-api/index.py  app.py  vercel.json  requirements.txt  .gitignore
+app.py  api/index.py  vercel.json  requirements.txt  .gitignore
  data/{site,red_flags,costs,breeds,adoption}.json
  templates/{base,index,expose,reality,adopt,404}.html
- static/{site.js,style.css}
+ public/static/{site.js,style.css,illustrations/*.svg}
 ```
 各機構連結與法規摘要上線前請再核對官方最新公告；預算是教育用途概估，非醫療報價。
